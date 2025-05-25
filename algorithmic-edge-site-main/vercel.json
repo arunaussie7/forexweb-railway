@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "www.the-forex-company.com",
+      "destination": "https://the-forex-company.com",
+      "permanent": true
+    }
+  ]
+} 

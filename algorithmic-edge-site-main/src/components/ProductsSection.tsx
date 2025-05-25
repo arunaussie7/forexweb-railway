@@ -148,36 +148,36 @@ const ProductsSection = () => {
           <CardContent className="p-8">
             <h3 className="text-xl font-semibold mb-6 text-center">Why Our Products Stand Out</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="p-4 rounded-xl bg-forex-lightgray hover:bg-forex-green/5 transition-colors duration-300">
-                <div className="w-10 h-10 bg-forex-green/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Shield className="text-forex-green" size={20} />
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-blue-600/5 hover:from-blue-500/20 hover:to-blue-600/10 border border-blue-200 transition-all duration-300">
+                <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Shield className="text-blue-600" size={24} />
                 </div>
-                <h4 className="font-medium mb-2 text-center">No Martingale Risk</h4>
-                <p className="text-sm text-forex-gray text-center">We never use dangerous compounding strategies</p>
+                <h4 className="font-semibold mb-3 text-center text-blue-900">No Martingale Risk</h4>
+                <p className="text-sm text-blue-800/80 text-center">We never use dangerous compounding strategies</p>
               </div>
               
-              <div className="p-4 rounded-xl bg-forex-lightgray hover:bg-forex-green/5 transition-colors duration-300">
-                <div className="w-10 h-10 bg-forex-green/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <TrendingUp className="text-forex-green" size={20} />
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-600/5 hover:from-purple-500/20 hover:to-purple-600/10 border border-purple-200 transition-all duration-300">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="text-purple-600" size={24} />
                 </div>
-                <h4 className="font-medium mb-2 text-center">Smart Algorithms</h4>
-                <p className="text-sm text-forex-gray text-center">Sophisticated pattern recognition</p>
+                <h4 className="font-semibold mb-3 text-center text-purple-900">Smart Algorithms</h4>
+                <p className="text-sm text-purple-800/80 text-center">Sophisticated pattern recognition</p>
               </div>
               
-              <div className="p-4 rounded-xl bg-forex-lightgray hover:bg-forex-green/5 transition-colors duration-300">
-                <div className="w-10 h-10 bg-forex-green/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <BarChart className="text-forex-green" size={20} />
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-emerald-600/5 hover:from-emerald-500/20 hover:to-emerald-600/10 border border-emerald-200 transition-all duration-300">
+                <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <BarChart className="text-emerald-600" size={24} />
                 </div>
-                <h4 className="font-medium mb-2 text-center">Risk Management</h4>
-                <p className="text-sm text-forex-gray text-center">Built-in protection for your capital</p>
+                <h4 className="font-semibold mb-3 text-center text-emerald-900">Risk Management</h4>
+                <p className="text-sm text-emerald-800/80 text-center">Built-in protection for your capital</p>
               </div>
               
-              <div className="p-4 rounded-xl bg-forex-lightgray hover:bg-forex-green/5 transition-colors duration-300">
-                <div className="w-10 h-10 bg-forex-green/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Zap className="text-forex-green" size={20} />
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-500/10 to-amber-600/5 hover:from-amber-500/20 hover:to-amber-600/10 border border-amber-200 transition-all duration-300">
+                <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Zap className="text-amber-600" size={24} />
                 </div>
-                <h4 className="font-medium mb-2 text-center">Regular Updates</h4>
-                <p className="text-sm text-forex-gray text-center">Continuous improvement and optimization</p>
+                <h4 className="font-semibold mb-3 text-center text-amber-900">Regular Updates</h4>
+                <p className="text-sm text-amber-800/80 text-center">Continuous improvement and optimization</p>
               </div>
             </div>
           </CardContent>

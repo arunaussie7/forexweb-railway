@@ -1,14 +1,12 @@
-
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
-import TickerStrip from '../components/TickerStrip';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
-import DevelopmentSection from '../components/DevelopmentSection';
-import ProductsSection from '../components/ProductsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import PerformanceSection from '../components/PerformanceSection';
+import LocationSection from '../components/LocationSection';
 
 const Index = () => {
   // Initialize the scroll animation
@@ -22,12 +20,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <TickerStrip />
       <main>
         <HeroSection />
         <AboutSection />
-        <DevelopmentSection />
-        <ProductsSection />
+        <PerformanceSection />
+        <LocationSection />
         <ContactSection />
       </main>
       <Footer />

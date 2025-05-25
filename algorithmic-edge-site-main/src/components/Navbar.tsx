@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,36 +28,44 @@ const Navbar = () => {
     }
   };
 
+  const goToPricing = () => {
+    setIsOpen(false);
+    navigate('/pricing');
+  };
+
   const renderNavItem = (item: string) => {
-    if (item === 'about') {
+    if (item === 'about' || item === 'blog' || item === 'development' || item === 'products') {
       return (
         <Link
-          to="/about"
-          className="text-forex-black hover:text-forex-green font-medium transition-colors"
+          to={item === 'development' ? '/custom-development' : 
+               item === 'products' ? '/products' : 
+               `/${item}`}
+          className="text-forex-black hover:text-forex-green font-medium transition-colors duration-300 px-4 py-2 rounded-lg hover:bg-forex-green/5"
           onClick={() => setIsOpen(false)}
         >
-          About Us
+          {item === 'about' ? 'About Us' : 
+           item === 'blog' ? 'Blog' :
+           item === 'products' ? 'Products' :
+           'Custom Development'}
         </Link>
       );
     }
     return (
       <button
         onClick={() => scrollToSection(item)}
-        className="text-forex-black hover:text-forex-green font-medium transition-colors"
+        className="text-forex-black hover:text-forex-green font-medium transition-colors duration-300 px-4 py-2 rounded-lg hover:bg-forex-green/5"
       >
-        {item === 'home' ? 'Home' : 
-        item === 'development' ? 'Custom Development' : 
-        item === 'products' ? 'Products' : 
-        'Contact Us'}
+        {item === 'home' ? 'Home' : 'Contact Us'}
       </button>
     );
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-white/80 backdrop-blur-sm'}`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center overflow-visible">
+        <div className="flex items-center h-20">
+          {/* Logo - Left */}
+          <div className="flex-shrink-0">
             <Link to="/">
               <img 
                 src="/TheforexCompany.png" 
@@ -66,18 +75,28 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {['home', 'about', 'development', 'products', 'contact'].map((item) => (
-              <div key={item}>
+          {/* Desktop Navigation - Center */}
+          <div className="hidden md:flex items-center justify-center flex-1 space-x-1">
+            {['home', 'about', 'development', 'products', 'blog', 'contact'].map((item) => (
+              <div key={item} className="px-1">
                 {renderNavItem(item)}
               </div>
             ))}
           </div>
 
+          {/* Auth Buttons - Right */}
+          <div className="hidden md:flex items-center space-x-3">
+            <button
+              onClick={goToPricing}
+              className="px-5 py-2 bg-forex-green text-white rounded-lg font-medium transition-all duration-300 hover:bg-forex-darkgreen hover:shadow-lg hover:shadow-forex-green/20 transform hover:-translate-y-0.5"
+            >
+              Sign Up
+            </button>
+          </div>
+
           {/* Mobile Navigation Button */}
           <button
-            className="md:hidden text-forex-black focus:outline-none"
+            className="md:hidden text-forex-black focus:outline-none hover:text-forex-green transition-colors duration-300"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,13 +105,21 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-white shadow-md">
-            <div className="flex flex-col px-4 pt-2 pb-4 space-y-4">
-              {['home', 'about', 'development', 'products', 'contact'].map((item) => (
-                <div key={item}>
+          <div className="md:hidden bg-white/95 backdrop-blur-md shadow-lg rounded-b-2xl">
+            <div className="flex flex-col px-4 pt-2 pb-4 space-y-2">
+              {['home', 'about', 'development', 'products', 'blog', 'contact'].map((item) => (
+                <div key={item} className="py-1">
                   {renderNavItem(item)}
                 </div>
               ))}
+              <div className="flex flex-col space-y-2 pt-3 mt-2 border-t border-gray-100">
+                <button
+                  onClick={goToPricing}
+                  className="px-4 py-2 bg-forex-green text-white rounded-lg font-medium transition-all duration-300 hover:bg-forex-darkgreen hover:shadow-lg hover:shadow-forex-green/20"
+                >
+                  Sign Up
+                </button>
+              </div>
             </div>
           </div>
         )}
